@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+
+    <!--Font Icons-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    <!--Font Awesome -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/png" href="https://cdn1.iconfinder.com/data/icons/health-fitness-icons/60/needleColor-512.png"/>
+    <title>Dashboard | vacina.io</title>
+
+  </head>
+  <body>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-light nav_personalizada">
+
+      <b class="navbrand_personalizada">
+        <img src="https://cdn1.iconfinder.com/data/icons/health-fitness-icons/60/needleColor-512.png" alt="" width="40vw">vacina.io
+      </b>
+    </nav>
+    <!--Fim Navbar-->
+    <br>
+
+
+    <div class="container">
+
+      <!-- Pesquisa -->
+      <div class="row">
+        <div class="col-md-2 col-xs-12"></div>
+        <div class="col-md-8 col-xs-12">
+          <div class="card">
+            <div class="card-body">
+              <form>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-5">
+                      Período:
+                      <input class="form-control" type="text" name="datefilter" value="" />
+                    </div>
+                    <div class="col-md-2">
+                      <br><p style="text-align: center"><small>OU</small></p>
+                    </div>
+                    <div class="col-md-5">
+                      Cartão SUS:
+                      <input class="form-control" type="text" value="" />
+                    </div>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-info" style="width:100%"><i class="fas fa-check"></i> Consultar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 col-xs-12"></div>
+      </div>
+      <!-- Fim Pesquisa -->
+
+      <!-- Gráficos -->
+      <div class="row">
+        <div class="col-md-12 col-xs-12">
+          <div id="tipovacina" style="width: 100%; height: 60vh;background-color: #d8e2dc;"></div>
+        </div>
+        <div class="col-md-12 col-xs-12">
+          <div align="center">
+            <div id="populacaovacina" style="width: 100%; height: 60vh;"></div>
+          </div>
+        </div>
+        <div class="col-md-12 col-xs-12">
+          <div id="publicoevacina" style="width: 900px; height: 500px;"></div>
+        </div>
+      </div>
+      <!-- Fim Gráficos -->
+      Tipo Vacina (pegar data da consulta)
+
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-xs-12" align="left">
+            <h4 style="font-family: 'Ubuntu', sans-serif;">vacina.io</h4>
+            <p>Originalmente criada no <img src="http://angelhack18.wpengine.com/wp-content/uploads/2018/03/light-logo.png" alt="" height="50vh"> </p>
+          </div>
+          <div class="col-md-6 col-xs-12" align="left">
+            <i class="fab fa-facebook footericon"></i>
+            <i class="fab fa-instagram footericon"></i>
+            <i class="fab fa-whatsapp footericon"></i> +55 11 98473 6275 <br>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Fim footer -->
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- CDN Charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- Script Donout - Tipo de Vacina -->
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Febre Amarela',     1190],
+          ['Influenza',      2540],
+          ['Vacina dT',  240],
+          ['Hepatite B', 320]
+        ]);
+
+        var options = {
+          title: 'Vacinas aplicadas - Tipos',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('tipovacina'));
+        chart.draw(data, options);
+      }
+
+      google.charts.setOnLoadCallback(drawSeriesChart);
+      function drawSeriesChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['ID', 'Grupo (Número)', 'Percentual atingido', 'Vacina',     'Tamanho do público alvo'],
+          ['CRI',    1,              99,      'Crianças',  4500],
+          ['SAU',    2,              98,      'Trabalhadores de saúde',         1700],
+          ['GES',    3,               96.5,      'Gestantes',         1400],
+          ['PUE',    4,              80,      'Puérperas',    400],
+          ['IND',    5,              5,         'Indigenas',         2400],
+          ['IDO',    6,              95,       'Idosos',    3400],
+        ]);
+
+        var options = {
+          title: 'Correlação entre púplico alvo, tamanho da população e quantidade imunizada de 0 a 12 anos',
+          hAxis: {title: 'Número do Grupo', },
+          vAxis: {title: 'Percentual Atingido', maxValue:'110'},
+          bubble: {textStyle: {fontSize: 11}}
+        };
+
+        var chart = new google.visualization.BubbleChart(document.getElementById('publicoevacina'));
+        chart.draw(data, options);
+      }
+    </script>
+    <!-- Fim Script Donout - Tipo de Vacina -->
+
+    <!-- Chart de Barra -->
+    <script type="text/javascript">
+         google.charts.load('current', {'packages':['bar']});
+         google.charts.setOnLoadCallback(drawChart);
+
+         function drawChart() {
+           var data = google.visualization.arrayToDataTable([
+             ['Ano','0-14 anos', '15-30 anos', '30-55 anos', '56-80 anos'],
+             ['2014', 99, 88, 89, 93],
+             ['2015', 98, 80, 90, 90],
+             ['2016', 96, 70, 92, 89],
+             ['2017', 98, 44, 75, 93]
+           ]);
+
+           var options = {
+             chart: {
+               title: 'Vacinas para Influenza aplicadas julho/2017',
+               subtitle: 'Crianças, Adultos, e Idosos',
+             }
+           };
+
+           var chart = new google.charts.Bar(document.getElementById('populacaovacina'));
+
+           chart.draw(data, google.charts.Bar.convertOptions(options));
+         }
+       </script>
+       <!-- FIM Chart Barra -->
+
+
+      <!-- Date Range Picker -->
+      <script type="text/javascript">
+      $(function() {
+
+      $('input[name="datefilter"]').daterangepicker({
+        autoUpdateInput: false,
+        locale: {
+            cancelLabel: 'Clear'
+        }
+      });
+
+      $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+        $(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
+      });
+
+      $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+        $(this).val('');
+      });
+
+      });
+      </script>
+      <!-- Fim Date Range Picker  -->
+  </body>
+</html>

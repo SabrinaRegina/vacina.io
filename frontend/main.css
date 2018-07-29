@@ -1,0 +1,94 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+@media only screen and (max-width: 768px) {
+body {
+	background-color: #d8e2dc;
+	/* margin-bottom: 60px; */
+	padding-bottom: 260px;
+}
+}
+@media only screen and (min-width: 769px) {
+body {
+	background-color: #d8e2dc;
+	/* margin-bottom: 60px; */
+	padding-bottom: 130px;
+}
+}
+.nav_personalizada{
+	background-color: #028090;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 1.6em;
+}
+.navbrand_personalizada {
+    color: #028090;
+		border-radius: 16px;
+		border: 2px solid #ffffff;
+		background-color: #ffffff;
+		padding: 0 10px 0 5px;
+}
+
+#logincard {
+	margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+/* footer */
+@media only screen and (max-width: 768px) {
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 260px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #0D0D0D;
+	color: #F0F0F0;
+	padding: 2vh;
+}
+}
+@media only screen and (min-width: 769px) {
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 130px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #0D0D0D;
+	color: #F0F0F0;
+	padding: 2vh;
+}
+}
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.footericon {
+	border: 1px solid #202020;
+	border-radius: 20px;
+	background: #202020;
+	color: white;
+	padding: 1vh;
+}
+/* fim footer */
+
+/* botoões */
+.botaoSeaBlue { background-color: #05668d; color: white;}
+/* fim botões */
+
+/* Usado nas páginas de visualização e cadastro */
+.centeralignparent {height: 80vh;}
+.centeralignfloater {
+    float: left;
+    height: 40%;
+    width: 100%;
+    margin-bottom: -10vh;
+}
+.centeralignchild {
+    clear: both;
+    height: 100px;
+}
+/* FIM Usado nas páginas de visualização e cadastro */
